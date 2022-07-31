@@ -1,0 +1,40 @@
+.cover-container {
+    position: absolute;
+    width: 40%;
+    
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+
+.cover-background {
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+}
+
+.cover-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: auto;
+    width: 100%;
+    
+
+}
+
+@media only screen and (max-width: 600px) { 
+
+    .cover-container {
+        width: 100%;
+        height: 40%;
+    }
+
+    .cover-image {
+        height: 100%;
+        width: auto;
+    }
+
+}
