@@ -15,6 +15,11 @@ app.get('/test-episode', (req, res) => {
   res.sendFile(path.join(__dirname , 'public/rokko-test.mpeg'));
 	
 });
+app.get('/cover', (req, res) => {
+  // res.contentType('');
+  res.sendFile(path.join(__dirname , 'public/alihan.jpg'));
+	
+});
 const server = app.listen(process.env.PORT || 3310, () => {
   var port = server.address().port;
   console.log('Listening...' + port);

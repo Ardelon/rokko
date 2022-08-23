@@ -5,6 +5,9 @@
  <description>Rokko Podcast RSS File</description>
  <link>http://rokko.ist/rss</link>
  <copyright>2022 rokko.ist All rights reserved</copyright>
+ <email>alihankeskin@rokko.ist</email>
+ <author>Rokko</author>
+ <image href="http://rokko.ist/cover"/>
  <pubDate>Tue, 23 Aug 2022 21:00:00 +0000</pubDate>
  <ttl>1800</ttl>
 
