@@ -1,23 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0">
-<channel>
- <title>Rokko</title>
- <description>Rokko Podcast RSS File</description>
- <link>http://rokko.ist/rss</link>
- <copyright>2022 rokko.ist All rights reserved</copyright>
- <email>alihankeskin@rokko.ist</email>
- <author>Rokko</author>
- <image href="http://rokko.ist/cover"/>
- <pubDate>Tue, 23 Aug 2022 21:00:00 +0000</pubDate>
- <ttl>1800</ttl>
+<rss version="2.0"
+  xmlns:spotify="http://www.spotify.com/ns/rss">
 
- <item>
-  <title>Rokko Test</title>
-  <description>Rokko Podcast Test Episode</description>
-  <link>http://rokko.ist/test-episode</link>
-  <guid isPermaLink="false">7bd204c6-1655-4c27-aeee-53f933c5395f</guid>
-  <pubDate>Tue, 23 Aug 2022 21:00:00 +0000</pubDate>
- </item>
+  <channel>
+    <title>Rokko Podcast</title>
+    <description>Rokko Experience</description>
+    <language>tr</language>
+    <link>http://rokko.ist/rss</link>
+    <copyright>2022 rokko.ist All rights reserved</copyright>
+    <email>alihankeskin@rokko.ist</email>
+    <itunes:author>
+      Rokko
+    </itunes:author>
+    <itunes:image href="http://rokko.ist/cover"/>
+    <itunes:explicit>yes</itunes:explicit>
+    <itunes:category text="Music">
+      <itunes:category text="Instrument" />
+      <itunes:category text="Music Festival" />
+    </itunes:category>
+    <itunes:type>
+      episodic
+    </itunes:type>
+    <pubDate>Tue, 23 Aug 2022 21:00:00 +0000</pubDate>
+    <ttl>1800</ttl>
 
-</channel>
+    <item>
+      <guid isPermaLink="false">59431675-280c-4d13-bc33-665db6f4b6ff</guid>
+      <title>Episode 0 : Rokko Test</title>
+      <media:title>
+        Episode 0 : Rokko Test
+      </media:title>
+
+      <enclosure url="http://rokko.ist/test-episode" type="audio/mpeg" length="57344"/>
+      <description>Rokko Podcast Test Episode</description>
+      <media:description>Rokko Podcast Test Episode</media:description>
+      <media:content type="audio/mpeg" url="http://rokko.ist/test-episode" />
+      <itunes:duration>25</itunes:duration>
+      <itunes:order>0</itunes:order>
+
+      <link>http://rokko.ist/test-episode</link>
+      <pubDate>Tue, 23 Aug 2022 21:00:00 +0000</pubDate>
+    </item>
+
+  </channel>
 </rss>
