@@ -4,6 +4,8 @@ const path = require('path');
 const app = express();
 require('dotenv').config()
 app.use(express.static('/root/rokko/dist')); // prod
+app.use('/public', express.static('/root/rokko/public'));
+// app.use('/', express.static('/public'));
 
 app.get('/rss', (req, res) => {
   res.contentType('application/xml');
