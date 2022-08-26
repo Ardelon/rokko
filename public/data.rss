@@ -6,10 +6,7 @@
     <description>Rokko Podcast
     </description>
     <language>tr</language>
-    <itunes:owner>
-      <itunes:name>Alihan Keskin</itunes:name>
-      <itunes:email>akeskinw@gmail.com</itunes:email>
-    </itunes:owner>
+    <itunes:email>akeskinw@gmail.com</itunes:email>
     <itunes:author>Rokko Association</itunes:author>
     <itunes:category text="Music" />
     <itunes:category text="Instrument" />
