@@ -6,12 +6,15 @@
     <description>Rokko Podcast
     </description>
     <language>tr</language>
+    <itunes:owner>
+      <itunes:name>Alihan Keskin</itunes:name>
+      <itunes:email>akeskinw@gmail.com</itunes:email>
+    </itunes:owner>
     <itunes:author>Rokko Association</itunes:author>
-    <itunes:email>akeskinw@gmail.com</itunes:email>
     <itunes:category text="Music" />
     <itunes:category text="Instrument" />
     <itunes:type>episodic</itunes:type>
-    <itunes:image href="http://rokko.ist/cover" />
+    <itunes:image href="http://rokko.ist/public/alihan.jpg" />
     <item>
       <guid>1234</guid>
       <title>Episode 0 : Rokko Test</title>
@@ -19,7 +22,7 @@
       <pubDate>Fri, 26 Aug 2022 10:30:00 +0000</pubDate>
       <itunes:order>1</itunes:order>
       <itunes:duration>25</itunes:duration>
-      <enclosure url="http://rokko.ist/test-episode" type="audio/mpeg" />
+      <enclosure url="http://rokko.ist/public/rokko-test.mpeg" type="audio/mpeg" />
     </item>
   </channel>
 </rss>
