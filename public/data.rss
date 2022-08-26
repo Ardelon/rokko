@@ -1,28 +1,31 @@
-<?xml version="2.0" encoding="UTF-8"?>
-<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
+    <itunes:category text="Music">
+      <itunes:category text="Instrument"/>
+    </itunes:category>
     <title>Rokko Podcast</title>
     <link>http://rokko.ist</link>
     <description>Rokko Podcast
     </description>
     <language>tr</language>
     <itunes:owner>
-			<itunes:name>Alihan Keskin</itunes:name>
-			<itunes:email>akeskinw@hotmail.com</itunes:email>
-		</itunes:owner>
+      <itunes:name>Alihan Keskin</itunes:name>
+      <itunes:email>akeskinw@hotmail.com</itunes:email>
+    </itunes:owner>
     <itunes:author>Rokko Association</itunes:author>
-    <itunes:category text="Music" />
-    <itunes:category text="Instrument" />
     <itunes:type>episodic</itunes:type>
     <itunes:image href="http://rokko.ist/public/alihan.jpg" />
+    <itunes:explicit>yes</itunes:explicit>
     <item>
-      <guid>1234</guid>
+      <guid isPermaLink="false">a1c8837a-eb87-47f6-8694-74a079d9640f</guid>
       <title>Episode 0 : Rokko Test</title>
       <description>Episode 0 : Rokko Test</description>
       <pubDate>Fri, 26 Aug 2022 10:30:00 +0000</pubDate>
       <itunes:order>1</itunes:order>
       <itunes:duration>25</itunes:duration>
-      <enclosure url="http://rokko.ist/public/rokko-test.mpeg" type="audio/mpeg" />
+      <enclosure url="http://rokko.ist/public/rokko-test.mpeg" type="audio/mpeg" length="54377"/>
     </item>
   </channel>
 </rss>
