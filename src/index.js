@@ -1,8 +1,4 @@
-import loadCover from "./components/cover/cover";
-import loadInformationContainer from "./components/information/informationContainer";
-import './assets/style.scss'
+import "./assets/style.scss";
+import { loadUnderConstruction } from "./views/underConstruction";
 
-const cover = loadCover();
-const informationContainer = loadInformationContainer();
-
-document.body.append(cover,informationContainer)
+loadUnderConstruction();

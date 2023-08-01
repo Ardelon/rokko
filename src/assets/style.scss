@@ -1,27 +1,65 @@
-@import 'cover.scss';
-@import 'information.scss';
-
 body {
 	margin: 0;
 	padding: 0;
 	font-family: monospace;
-  // background-color: #000000;
-  // color: white;
+	// background-color: #000000;
+	// color: white;
 }
 
+.under-construction {
+	position: absolute;
 
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	font-size: 24px;
+	width: 300px;
+	height: 200px;
+}
+
+.under-construction-img {
+	max-width: 600px;
+	width: 100%;
+	height: auto;
+}
+
+@media only screen and (min-width: 450px) {
+	body {
+		font-size: 12px;
+	}
+
+	.under-construction {
+		width: 300px;
+		height: 200px;
+	}
+}
 @media only screen and (min-width: 600px) {
-    body {
-      font-size: 12px;
-    }
-  }
+	body {
+		font-size: 12px;
+	}
+
+	.under-construction {
+		width: 400px;
+		height: 300px;
+	}
+}
 @media only screen and (min-width: 900px) {
-    body {
-      font-size: 14px;
-    }
-  }
+	body {
+		font-size: 14px;
+	}
+
+	.under-construction {
+		width: 600px;
+		height: 400px;
+	}
+}
 @media only screen and (min-width: 1200px) {
-    body {
-      font-size: 16px;
-    }
-  }
+	body {
+		font-size: 16px;
+	}
+	.under-construction {
+		width: 800px;
+		height: 400px;
+	}
+}

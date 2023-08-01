@@ -15,7 +15,7 @@
   \**********************************************************/
 /***/ ((module) => {
 
-eval("const createElement = (config) => {\r\n    const {id,classList = [], type = 'div',innerText,innerHTML, src, contentEditable,row, options,optionValues,multiple,size, placeholder} = config\r\n\r\n    const container = document.createElement(type);\r\n    id              ? container.id = id                                                     : '';\r\n    classList       ? classList.forEach(className => {container.classList.add(className)})  : '';\r\n    innerText       ? container.innerText = innerText                                       : '';\r\n    innerHTML       ? container.innerHTML = innerHTML                                       : '';\r\n    src             ? container.src = src                                                   : '';\r\n    contentEditable ? container.contentEditable = contentEditable                           : '';\r\n    row             ? container.row = row                                                   : '';\r\n    multiple        ? container.multiple = multiple                                         : '';\r\n    size            ? container.size = size                                                 : '';\r\n    placeholder     ? container.placeholder = placeholder                                   : '';\r\n\r\n    if (options) {\r\n        options.forEach((value, index) => {\r\n            let option = document.createElement('option');\r\n            optionValues ? option.value = optionValues[index] : option.value = value;            \r\n            option.innerText = value;\r\n            container.appendChild(option);\r\n        })\r\n    }\r\n\r\n    return container;\r\n}\r\n\r\nmodule.exports = {createElement}\n\n//# sourceURL=webpack://rokko/./node_modules/ardelon-create-element/src/index.js?");
+eval("/**\r\n *\r\n * @param {object} config\r\n * @param {string} config.tag\r\n * @param {Array<String>} config.classList\r\n * @param {String} config.id\r\n * @param {object} config.attributeList\r\n * @param {String} config.innerText\r\n * @param {String} config.innerHTML\r\n * @param {String} config.src\r\n * @param {object} config.eventList\r\n * @description Create a node element with given parameters and returns it. It is used for reducing code repeating and easy creation of elements\r\n * @returns {Node object}\r\n * @function createElement\r\n */\r\n\r\nconst createElement = (config) => {\r\n\tconst {\r\n\t\ttag = \"div\",\r\n\t\tclassList = [],\r\n\t\tid,\r\n\t\tattributeList = {},\r\n\t\tinnerText,\r\n\t\tinnerHTML,\r\n\t\tsrc,\r\n\t\teventList = {},\r\n\t} = config;\r\n\r\n\tconst element = document.createElement(tag);\r\n\tid ? (element.id = id) : \"\";\r\n\r\n\tconst attributeListKeys = Object.keys(attributeList);\r\n\tif (attributeListKeys.length) {\r\n\t\tattributeListKeys.forEach((attribute) => {\r\n\t\t\telement.setAttribute(attribute, attributeList[attribute]);\r\n\t\t});\r\n\t}\r\n\tconst eventListKeys = Object.keys(eventList);\r\n\tif (eventListKeys.length) {\r\n\t\teventListKeys.forEach((event) => {\r\n\t\t\telement.addEventListener(event, eventList[event]);\r\n\t\t});\r\n\t}\r\n\r\n\tclassList\r\n\t\t? classList.forEach((className) => {\r\n\t\t\t\tif (className !== \"\" || className !== null || className !== undefined) {\r\n\t\t\t\t\telement.classList.add(className);\r\n\t\t\t\t}\r\n\t\t  })\r\n\t\t: \"\";\r\n\r\n\tinnerText ? (element.innerText = innerText) : \"\";\r\n\tinnerHTML ? (element.innerHTML = innerHTML) : \"\";\r\n\tsrc ? (element.src = src) : \"\";\r\n\r\n\treturn element;\r\n};\r\n\r\nmodule.exports = createElement;\r\n\n\n//# sourceURL=webpack://rokko/./node_modules/ardelon-create-element/src/index.js?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("const createElement = (config) => {\r\n    const {id,classList = [], type 
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \".cover-container {\\n  position: absolute;\\n  width: 40%;\\n  top: 0;\\n  bottom: 0;\\n  left: 0;\\n}\\n\\n.cover-background {\\n  width: 100%;\\n  height: 100%;\\n  background-color: #000000;\\n}\\n\\n.cover-image {\\n  position: absolute;\\n  top: 50%;\\n  left: 50%;\\n  transform: translate(-50%, -50%);\\n  height: auto;\\n  width: 100%;\\n}\\n\\n@media only screen and (max-width: 600px) {\\n  .cover-container {\\n    width: 100%;\\n    height: 40%;\\n  }\\n  .cover-image {\\n    height: 100%;\\n    width: auto;\\n  }\\n}\\n.information-container {\\n  position: absolute;\\n  top: 0;\\n  bottom: 0;\\n  right: 0;\\n  width: 60%;\\n}\\n.information-container .header {\\n  padding: 0 2em;\\n  margin-top: 4em;\\n}\\n\\n.title {\\n  font-size: 6em;\\n  margin: 0.2em 0;\\n  line-height: 1em;\\n  letter-spacing: 0.2em;\\n}\\n\\n.desktop-description {\\n  font-size: 1.5em;\\n  margin: 0.1em 0;\\n  line-height: 1.2em;\\n  letter-spacing: 0.1em;\\n}\\n\\n.mobile-description {\\n  display: none;\\n}\\n\\n.card-list-container {\\n  overflow: auto;\\n  display: flex;\\n  flex-direction: row;\\n}\\n.card-list-container ::-webkit-scrollbar {\\n  display: none;\\n}\\n\\n.card-list-container::-webkit-scrollbar {\\n  display: none;\\n}\\n\\n.card-container {\\n  min-height: 300px;\\n  width: 100%;\\n  padding: 2em 0px 0px 2em;\\n}\\n.card-container .card-image {\\n  margin: 0 20px 0 0;\\n  height: 200px;\\n  width: 200px;\\n}\\n.card-container .card-credentials {\\n  font-size: 2em;\\n}\\n\\n@media only screen and (max-width: 600px) {\\n  .information-container {\\n    width: 100%;\\n    height: 65%;\\n    bottom: 0;\\n    top: 35%;\\n    background-color: #000000;\\n  }\\n  .information-container .header {\\n    padding: 0 2em;\\n  }\\n  .title {\\n    color: white;\\n    font-size: 3em;\\n  }\\n  .desktop-description {\\n    display: none;\\n  }\\n  .mobile-description {\\n    font-size: 1.1em;\\n    margin: 0.1em 0;\\n    color: white;\\n    display: block;\\n    line-height: 1.3em;\\n    letter-spacing: 0.1em;\\n  }\\n  .card-container .card-credentials {\\n    color: white;\\n  }\\n}\\nbody {\\n  margin: 0;\\n  padding: 0;\\n  font-family: monospace;\\n  background-color: #000000;\\n  color: white;\\n}\\n\\n@media only screen and (min-width: 600px) {\\n  body {\\n    font-size: 8px;\\n  }\\n}\\n@media only screen and (min-width: 900px) {\\n  body {\\n    font-size: 12px;\\n  }\\n}\\n@media only screen and (min-width: 1200px) {\\n  body {\\n    font-size: 16px;\\n  }\\n}\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://rokko/./src/assets/style.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"body {\\n  margin: 0;\\n  padding: 0;\\n  font-family: monospace;\\n}\\n\\n.under-construction {\\n  position: absolute;\\n  top: 50%;\\n  left: 50%;\\n  transform: translate(-50%, -50%);\\n  text-align: center;\\n  font-size: 24px;\\n  width: 300px;\\n  height: 200px;\\n}\\n\\n.under-construction-img {\\n  max-width: 600px;\\n  width: 100%;\\n  height: auto;\\n}\\n\\n@media only screen and (min-width: 450px) {\\n  body {\\n    font-size: 12px;\\n  }\\n  .under-construction {\\n    width: 300px;\\n    height: 200px;\\n  }\\n}\\n@media only screen and (min-width: 600px) {\\n  body {\\n    font-size: 12px;\\n  }\\n  .under-construction {\\n    width: 400px;\\n    height: 300px;\\n  }\\n}\\n@media only screen and (min-width: 900px) {\\n  body {\\n    font-size: 14px;\\n  }\\n  .under-construction {\\n    width: 600px;\\n    height: 400px;\\n  }\\n}\\n@media only screen and (min-width: 1200px) {\\n  body {\\n    font-size: 16px;\\n  }\\n  .under-construction {\\n    width: 800px;\\n    height: 400px;\\n  }\\n}\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://rokko/./src/assets/style.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -52,102 +52,14 @@ eval("\n\nmodule.exports = function (i) {\n  return i[1];\n};\n\n//# sourceURL=w
 
 /***/ }),
 
-/***/ "./src/assets/images/alihan.jpg":
-/*!**************************************!*\
-  !*** ./src/assets/images/alihan.jpg ***!
-  \**************************************/
+/***/ "./src/assets/images/logo-wb.jpg":
+/*!***************************************!*\
+  !*** ./src/assets/images/logo-wb.jpg ***!
+  \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"cfa6adf229d8ba2a6c45c3e8b342e730.jpg\");\n\n//# sourceURL=webpack://rokko/./src/assets/images/alihan.jpg?");
-
-/***/ }),
-
-/***/ "./src/assets/images/cagri.jpg":
-/*!*************************************!*\
-  !*** ./src/assets/images/cagri.jpg ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"6b813f69cc33a25789acbf0155f12a0b.jpg\");\n\n//# sourceURL=webpack://rokko/./src/assets/images/cagri.jpg?");
-
-/***/ }),
-
-/***/ "./src/assets/images/emre.jpg":
-/*!************************************!*\
-  !*** ./src/assets/images/emre.jpg ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"2025b1a8b51c5cf233f3d3db5ad4ec77.jpg\");\n\n//# sourceURL=webpack://rokko/./src/assets/images/emre.jpg?");
-
-/***/ }),
-
-/***/ "./src/assets/images/hamza.jpg":
-/*!*************************************!*\
-  !*** ./src/assets/images/hamza.jpg ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"60fdf949d5848d8eed70440825160b1c.jpg\");\n\n//# sourceURL=webpack://rokko/./src/assets/images/hamza.jpg?");
-
-/***/ }),
-
-/***/ "./src/assets/images/ica.jpg":
-/*!***********************************!*\
-  !*** ./src/assets/images/ica.jpg ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"4fe3e7242b6957a9d59ddb3ec1c6adbd.jpg\");\n\n//# sourceURL=webpack://rokko/./src/assets/images/ica.jpg?");
-
-/***/ }),
-
-/***/ "./src/assets/images/ilker.jpg":
-/*!*************************************!*\
-  !*** ./src/assets/images/ilker.jpg ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"298a7e01956f0badaedded01aeca4ebc.jpg\");\n\n//# sourceURL=webpack://rokko/./src/assets/images/ilker.jpg?");
-
-/***/ }),
-
-/***/ "./src/assets/images/mirza.jpg":
-/*!*************************************!*\
-  !*** ./src/assets/images/mirza.jpg ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"471c5ee8a21682a8aa90b1e4f7d908d5.jpg\");\n\n//# sourceURL=webpack://rokko/./src/assets/images/mirza.jpg?");
-
-/***/ }),
-
-/***/ "./src/assets/images/rokko-logo.png":
-/*!******************************************!*\
-  !*** ./src/assets/images/rokko-logo.png ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"dc067ac287443eaa23fac2cd24ac1694.png\");\n\n//# sourceURL=webpack://rokko/./src/assets/images/rokko-logo.png?");
-
-/***/ }),
-
-/***/ "./src/assets/images/serkan.jpg":
-/*!**************************************!*\
-  !*** ./src/assets/images/serkan.jpg ***!
-  \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"0226b78775ef2215bd77b8ca4c091f2e.jpg\");\n\n//# sourceURL=webpack://rokko/./src/assets/images/serkan.jpg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"9d4bf40c0d103d09a6ce4be057ea0fc4.jpg\");\n\n//# sourceURL=webpack://rokko/./src/assets/images/logo-wb.jpg?");
 
 /***/ }),
 
@@ -228,50 +140,6 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
-/***/ "./src/components/cover/cover.js":
-/*!***************************************!*\
-  !*** ./src/components/cover/cover.js ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var ardelon_create_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ardelon-create-element */ \"./node_modules/ardelon-create-element/src/index.js\");\n/* harmony import */ var ardelon_create_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ardelon_create_element__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _assets_images_rokko_logo_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/images/rokko-logo.png */ \"./src/assets/images/rokko-logo.png\");\n\r\n\r\nconst loadCover = () => {\r\n\r\n    const coverContainer = (0,ardelon_create_element__WEBPACK_IMPORTED_MODULE_0__.createElement)({classList:['cover-container']});\r\n    const coverBackground = (0,ardelon_create_element__WEBPACK_IMPORTED_MODULE_0__.createElement)({classList:['cover-background']});\r\n    const cover = (0,ardelon_create_element__WEBPACK_IMPORTED_MODULE_0__.createElement)({type:'img', src:_assets_images_rokko_logo_png__WEBPACK_IMPORTED_MODULE_1__[\"default\"],classList:['cover-image']});\r\n\r\n    coverContainer.append(coverBackground,cover)\r\n    return coverContainer\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loadCover);\n\n//# sourceURL=webpack://rokko/./src/components/cover/cover.js?");
-
-/***/ }),
-
-/***/ "./src/components/information/informationContainer.js":
-/*!************************************************************!*\
-  !*** ./src/components/information/informationContainer.js ***!
-  \************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var ardelon_create_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ardelon-create-element */ \"./node_modules/ardelon-create-element/src/index.js\");\n/* harmony import */ var ardelon_create_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ardelon_create_element__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _data_members__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../data/members */ \"./src/data/members.js\");\n/* harmony import */ var _personCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./personCard */ \"./src/components/information/personCard.js\");\n\r\n\r\n\r\nconst loadInformationContainer = () => {\r\n\r\n    const informationContainer = (0,ardelon_create_element__WEBPACK_IMPORTED_MODULE_0__.createElement)({classList:['information-container']});\r\n    const header = (0,ardelon_create_element__WEBPACK_IMPORTED_MODULE_0__.createElement)({classList:['header']});\r\n    const body = (0,ardelon_create_element__WEBPACK_IMPORTED_MODULE_0__.createElement)({classList:['body']});\r\n    const title = (0,ardelon_create_element__WEBPACK_IMPORTED_MODULE_0__.createElement)({type:'h1', classList:['title'], innerText:'ROKKO'})\r\n    const description = (0,ardelon_create_element__WEBPACK_IMPORTED_MODULE_0__.createElement)({type:'h4', classList:['desktop-description'], innerText:'Rock Kültürünü Koruma Derneği orem Ipsum is simply dummy text of the printing and typesettin'});\r\n    const mobileDescription = (0,ardelon_create_element__WEBPACK_IMPORTED_MODULE_0__.createElement)({type:'h4', classList:['mobile-description'], innerText:'Rock Kültürünü Koruma Derneği orem Ipsum is simply dummy text of the printing and typesettin'})\r\n    \r\n    const cardList = (0,_personCard__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(_data_members__WEBPACK_IMPORTED_MODULE_1__.members);\r\n    \r\n    \r\n    header.append(title,description,mobileDescription);\r\n    body.append(cardList);\r\n    informationContainer.append(header,body);\r\n\r\n    return informationContainer\r\n\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loadInformationContainer);\n\n//# sourceURL=webpack://rokko/./src/components/information/informationContainer.js?");
-
-/***/ }),
-
-/***/ "./src/components/information/personCard.js":
-/*!**************************************************!*\
-  !*** ./src/components/information/personCard.js ***!
-  \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var ardelon_create_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ardelon-create-element */ \"./node_modules/ardelon-create-element/src/index.js\");\n/* harmony import */ var ardelon_create_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ardelon_create_element__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\nconst loadCardList = (props) => {\r\n\tconst cardListContainer = (0,ardelon_create_element__WEBPACK_IMPORTED_MODULE_0__.createElement)({\r\n\t\tclassList: ['card-list-container'],\r\n\t});\r\n\r\n\tprops.forEach((member) => {\r\n\t\tconst card = generateCard(member);\r\n\t\tcardListContainer.append(card);\r\n\t});\r\n\r\n\treturn cardListContainer;\r\n};\r\n\r\nconst generateCard = (props) => {\r\n\tconst cardContainer = (0,ardelon_create_element__WEBPACK_IMPORTED_MODULE_0__.createElement)({ classList: ['card-container'] });\r\n    const image = (0,ardelon_create_element__WEBPACK_IMPORTED_MODULE_0__.createElement)({type:'img', src:props.image, classList:['card-image']})\r\n    const credentials = (0,ardelon_create_element__WEBPACK_IMPORTED_MODULE_0__.createElement)({type:'h5', innerText:props.name, classList:['card-credentials']})\r\n\r\n    cardContainer.append(image,credentials)\r\n    return cardContainer\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loadCardList);\r\n\n\n//# sourceURL=webpack://rokko/./src/components/information/personCard.js?");
-
-/***/ }),
-
-/***/ "./src/data/members.js":
-/*!*****************************!*\
-  !*** ./src/data/members.js ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"members\": () => (/* binding */ members)\n/* harmony export */ });\n/* harmony import */ var _assets_images_alihan_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/images/alihan.jpg */ \"./src/assets/images/alihan.jpg\");\n/* harmony import */ var _assets_images_ica_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/images/ica.jpg */ \"./src/assets/images/ica.jpg\");\n/* harmony import */ var _assets_images_cagri_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/images/cagri.jpg */ \"./src/assets/images/cagri.jpg\");\n/* harmony import */ var _assets_images_emre_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/images/emre.jpg */ \"./src/assets/images/emre.jpg\");\n/* harmony import */ var _assets_images_hamza_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../assets/images/hamza.jpg */ \"./src/assets/images/hamza.jpg\");\n/* harmony import */ var _assets_images_ilker_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../assets/images/ilker.jpg */ \"./src/assets/images/ilker.jpg\");\n/* harmony import */ var _assets_images_mirza_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../assets/images/mirza.jpg */ \"./src/assets/images/mirza.jpg\");\n/* harmony import */ var _assets_images_serkan_jpg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../assets/images/serkan.jpg */ \"./src/assets/images/serkan.jpg\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nconst members = [\r\n    {\r\n        name: 'Alihan Keskin',\r\n        image: _assets_images_alihan_jpg__WEBPACK_IMPORTED_MODULE_0__[\"default\"]\r\n    },\r\n    {\r\n        name: 'İsmail Cem Akgün',\r\n        image: _assets_images_ica_jpg__WEBPACK_IMPORTED_MODULE_1__[\"default\"]\r\n    },\r\n    {\r\n        name: 'Çağrı Aydın',\r\n        image: _assets_images_cagri_jpg__WEBPACK_IMPORTED_MODULE_2__[\"default\"]\r\n    },\r\n    {\r\n        name: 'Emre Bingöl',\r\n        image: _assets_images_emre_jpg__WEBPACK_IMPORTED_MODULE_3__[\"default\"]\r\n    },\r\n    {\r\n        name: 'Hamza Furkan Demirkan',\r\n        image: _assets_images_hamza_jpg__WEBPACK_IMPORTED_MODULE_4__[\"default\"]\r\n    },\r\n    {\r\n        name: 'Mirza Barışer',\r\n        image: _assets_images_mirza_jpg__WEBPACK_IMPORTED_MODULE_6__[\"default\"]\r\n    },\r\n    {\r\n        name: 'İlker Sever',\r\n        image: _assets_images_ilker_jpg__WEBPACK_IMPORTED_MODULE_5__[\"default\"]\r\n    },\r\n    {\r\n        name: 'Serkan Beldek',\r\n        image: _assets_images_serkan_jpg__WEBPACK_IMPORTED_MODULE_7__[\"default\"]\r\n    },\r\n]\n\n//# sourceURL=webpack://rokko/./src/data/members.js?");
-
-/***/ }),
-
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -279,7 +147,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_cover_cover__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/cover/cover */ \"./src/components/cover/cover.js\");\n/* harmony import */ var _components_information_informationContainer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/information/informationContainer */ \"./src/components/information/informationContainer.js\");\n/* harmony import */ var _assets_style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/style.scss */ \"./src/assets/style.scss\");\n\r\n\r\n\r\n\r\nconst cover = (0,_components_cover_cover__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\nconst informationContainer = (0,_components_information_informationContainer__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n\r\ndocument.body.append(cover,informationContainer)\n\n//# sourceURL=webpack://rokko/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _assets_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./assets/style.scss */ \"./src/assets/style.scss\");\n/* harmony import */ var _views_underConstruction__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./views/underConstruction */ \"./src/views/underConstruction.js\");\n\r\n\r\n\r\n(0,_views_underConstruction__WEBPACK_IMPORTED_MODULE_1__.loadUnderConstruction)();\r\n\n\n//# sourceURL=webpack://rokko/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/views/underConstruction.js":
+/*!****************************************!*\
+  !*** ./src/views/underConstruction.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"loadUnderConstruction\": () => (/* binding */ loadUnderConstruction)\n/* harmony export */ });\n/* harmony import */ var ardelon_create_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ardelon-create-element */ \"./node_modules/ardelon-create-element/src/index.js\");\n/* harmony import */ var ardelon_create_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ardelon_create_element__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _assets_images_logo_wb_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/images/logo-wb.jpg */ \"./src/assets/images/logo-wb.jpg\");\n\r\n\r\n\r\nconst loadUnderConstruction = () => {\r\n\tconst container = ardelon_create_element__WEBPACK_IMPORTED_MODULE_0___default()({ classList: [\"under-construction\"] });\r\n\r\n\tconst logoContainer = ardelon_create_element__WEBPACK_IMPORTED_MODULE_0___default()({\r\n\t\ttag: \"img\",\r\n\t\tsrc: _assets_images_logo_wb_jpg__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\r\n\t\tclassList: [\"under-construction-img\"],\r\n\t});\r\n\tconst informationContainer = ardelon_create_element__WEBPACK_IMPORTED_MODULE_0___default()({ innerText: \"Yakında Sizlerleyiz.\" });\r\n\r\n\tcontainer.append(logoContainer, informationContainer);\r\n\r\n\tdocument.body.append(container);\r\n};\r\n\n\n//# sourceURL=webpack://rokko/./src/views/underConstruction.js?");
 
 /***/ })
 

@@ -1,13 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="main.js" defer></script>
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="main.js" defer></script>
+
+		<title>Rokko Anasayfa</title>
+	</head>
+	<body>
+		<script>
+			const loadScript = function (url) {
+				return new Promise(function (resolve, reject) {
+					const script = document.createElement("script");
+					script.src = `${window.location.origin}/public/main.js`;
+
+					script.addEventListener("load", function () {
+						// The script is loaded completely
+						resolve(true);
+					});
+
+					const link = document.createElement("link");
+					link.rel = "icon";
+					link.type = "image/x-icon";
+					link.href = `${window.location.origin}/public/favicon.ico`;
+
+					document.head.appendChild(script);
+				});
+			};
+			const loadLink = function () {
+				return new Promise(function (resolve, reject) {
+					const link = document.createElement("link");
+					link.rel = "icon";
+					link.type = "image/x-icon";
+					link.href = `${window.location.origin}/favicon.ico`;
+
+					link.addEventListener("load", function () {
+						// The script is loaded completely
+						resolve(true);
+					});
+
+					document.head.appendChild(link);
+				});
+			};
+
+			loadScript();
+		</script>
+	</body>
 </html>
