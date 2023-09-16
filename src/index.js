@@ -1,4 +1,8 @@
 import "./assets/style.scss";
-import { loadUnderConstruction } from "./views/underConstruction";
+import {
+  firstBoardDecisions,
+  loadUnderConstruction,
+} from "./views/underConstruction";
 
 loadUnderConstruction();
+firstBoardDecisions();
