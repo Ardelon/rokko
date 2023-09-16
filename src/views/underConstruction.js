@@ -29,7 +29,7 @@ export const firstBoardDecisions = () => {
   });
   const paragraph = createElement({
     tag: "p",
-    innerText: `Dernek kurucu üyeleri dernek merkezinde, 16.09.2023 tarihinde toplanmış ve ilk genel kurul toplantısının; 07/10/2023 Cumartesi günü saat 10:00'da dernek merkezinde, üye çoğunluğu sağlanamadığı takdirde 14/10/2023 tarihinde aynı yer ve saatte toplanılmasına karar verilmiştir.`,
+    innerText: `Dernek kurucu üyeleri dernek merkezinde, 16/09/2023 tarihinde toplanmış ve ilk genel kurul toplantısının; 07/10/2023 Cumartesi günü saat 10:00'da dernek merkezinde, üye çoğunluğu sağlanamadığı takdirde 14/10/2023 tarihinde aynı yer ve saatte toplanılmasına karar verilmiştir.`,
   });
 
   container.append(firstTitle, paragraph);
