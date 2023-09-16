@@ -25,7 +25,7 @@ export const firstBoardDecisions = () => {
   const container = createElement({ classList: ["board-decision"] });
   const firstTitle = createElement({
     tag: "h1",
-    innerText: "İlk Görevlendirme Kararı",
+    innerText: "İlk Genel Kurul Duyurusu",
   });
   const paragraph = createElement({
     tag: "p",
