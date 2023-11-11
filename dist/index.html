@@ -1,50 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<script src="main.js" defer></script>
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-MKTHKKLS");
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="main.js" defer></script>
 
-		<title>Rokko Anasayfa</title>
-	</head>
-	<body>
-		<script>
-			const loadScript = function (url) {
-				return new Promise(function (resolve, reject) {
-					const script = document.createElement("script");
-					script.src = `${window.location.origin}/public/main.js`;
+    <title>Rokko Anasayfa</title>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MKTHKKLS"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <script>
+      const loadScript = function (url) {
+        return new Promise(function (resolve, reject) {
+          const script = document.createElement("script");
+          script.src = `${window.location.origin}/public/main.js`;
 
-					script.addEventListener("load", function () {
-						// The script is loaded completely
-						resolve(true);
-					});
+          script.addEventListener("load", function () {
+            // The script is loaded completely
+            resolve(true);
+          });
 
-					const link = document.createElement("link");
-					link.rel = "icon";
-					link.type = "image/x-icon";
-					link.href = `${window.location.origin}/public/favicon.ico`;
+          const link = document.createElement("link");
+          link.rel = "icon";
+          link.type = "image/x-icon";
+          link.href = `${window.location.origin}/public/favicon.ico`;
 
-					document.head.appendChild(script);
-				});
-			};
-			const loadLink = function () {
-				return new Promise(function (resolve, reject) {
-					const link = document.createElement("link");
-					link.rel = "icon";
-					link.type = "image/x-icon";
-					link.href = `${window.location.origin}/favicon.ico`;
+          document.head.appendChild(script);
+        });
+      };
+      const loadLink = function () {
+        return new Promise(function (resolve, reject) {
+          const link = document.createElement("link");
+          link.rel = "icon";
+          link.type = "image/x-icon";
+          link.href = `${window.location.origin}/favicon.ico`;
 
-					link.addEventListener("load", function () {
-						// The script is loaded completely
-						resolve(true);
-					});
+          link.addEventListener("load", function () {
+            // The script is loaded completely
+            resolve(true);
+          });
 
-					document.head.appendChild(link);
-				});
-			};
+          document.head.appendChild(link);
+        });
+      };
 
-			loadScript();
-		</script>
-	</body>
+      loadScript();
+    </script>
+  </body>
 </html>
