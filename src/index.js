@@ -5,4 +5,4 @@ import {
 } from "./views/underConstruction";
 
 loadUnderConstruction();
-firstBoardDecisions();
+// firstBoardDecisions();
